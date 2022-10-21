@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  /* --urgent-important-bg: #F2424D;
+  --not-urgent-important-bg: #01B0F0;
+  --urgent-not-important-bg: #92D050;
+  --not-urgent-not-important-bg: #DEAA10; */
+  /* --urgent-important-bg: #EA047E;
+  --not-urgent-important-bg: #FF6D28;
+  --urgent-not-important-bg: #FCE700;
+  --not-urgent-not-important-bg: #00F5FF; */
+  --urgent-important-bg: #F2424D;
+  --not-urgent-important-bg: #de7710;
+  --urgent-not-important-bg: #ffcc34;
+  --not-urgent-not-important-bg: #92D050;
+}
+
+body {
+  background: #06283D;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

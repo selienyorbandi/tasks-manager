@@ -1,0 +1,90 @@
+.TasksMatrix {
+    background: #06283D;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "air top-left top-right"
+        "left-top urgent-important not-urgent-important"
+        "left-bottom urgent-not-important not-urgent-not-important";
+    grid-template-columns: .1fr 2fr 2fr;
+    grid-template-rows: .1fr 2fr 2fr;
+    gap: .5rem;
+    border-bottom: 65px #06283D solid;
+    border-right: 65px #06283D solid;
+    
+}
+
+.TasksMatrix section {
+    min-height: 290px;
+}
+
+.Urgent {
+    background: var(--urgent-important-bg);
+    grid-area: urgent-important;
+}
+
+.High {
+    background: var(--not-urgent-important-bg);
+    grid-area: not-urgent-important;
+}
+
+.Medium {
+    background: var(--urgent-not-important-bg);
+    grid-area: urgent-not-important;
+}
+
+.Low {
+    background: var(--not-urgent-not-important-bg);
+    grid-area: not-urgent-not-important;
+}
+
+.TasksMatrix h2 {
+    color: #fff;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.TasksMatrix h2:nth-of-type(1) {
+    grid-area: top-left;
+    width: 100%;
+}
+
+.TasksMatrix h2:nth-of-type(2) {
+    grid-area: top-right;
+    width: 100%;
+}
+
+.TasksMatrix h2:nth-of-type(3) {
+    grid-area: left-top;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.TasksMatrix h2:nth-of-type(4) {
+    grid-area: left-bottom;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.TasksMatrix__AddBtn {
+    background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    background-color: #2dabf9;
+    box-shadow: inset 0px -3px 7px 0px #29bbff;
+    color: #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    border: solid 1px #000;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50.8%;
+    top: 50.8%;
+}
+
+.TasksMatrix__AddBtn:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
