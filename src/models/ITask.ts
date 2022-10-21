@@ -2,8 +2,8 @@ export enum Priority {
   highest = "urgent-important",
   high = "not-urgent-important",
   medium = "urgent-not-important",
-  low = "not-urgent-not-important"
-} 
+  low = "not-urgent-not-important",
+}
 
 export interface ITask {
   id: number;

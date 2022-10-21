@@ -1,51 +1,51 @@
 .Task {
-    background: #fdfdfd;
-    border: solid 1px gainsboro;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    align-items: center;
-    padding: .7rem .5rem;
-    min-height: 55px;
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  background: #fdfdfd;
+  border: solid 1px gainsboro;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  padding: 0.7rem 0.5rem;
+  min-height: 55px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .Task:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .Task h3 {
-    padding: 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  padding: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .Task div {
-    text-overflow: ellipsis;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .Task__Done {
-    text-decoration: line-through;
-    color: gray;
+  text-decoration: line-through;
+  color: gray;
 }
 
 .Task__Controllers {
-    display: none;
-    gap: .5rem;
+  display: none;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 800px) {
-    .Task:hover .Task__Controllers {
-        display: flex;
-        cursor: default;
-    }
+  .Task:hover .Task__Controllers {
+    display: flex;
+    cursor: default;
+  }
 
-    .Task__Controllers img {
-        border: 2px solid rgb(68, 68, 68);
-        border-radius: 7px;
-    }
+  .Task__Controllers img {
+    border: 2px solid rgb(68, 68, 68);
+    border-radius: 7px;
+  }
 }

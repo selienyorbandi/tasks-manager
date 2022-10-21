@@ -48,12 +48,8 @@ function TaskForm() {
   };
 
   return (
-    <form className={styles.TaskForm} onSubmit={(e) => handleSubmit(e)}>
-      <button
-        className={styles.TaskForm__CloseBtn}
-        aria-label="Close"
-        onClick={() => navigate(-1)}
-      >
+    <form className={styles.TaskForm} onSubmit={e => handleSubmit(e)}>
+      <button className={styles.TaskForm__CloseBtn} aria-label="Close" onClick={() => navigate(-1)}>
         ×
       </button>
       <label>
@@ -64,7 +60,7 @@ function TaskForm() {
           name="title"
           value={task.title}
           required
-          onChange={(e) => handleChange(e)}
+          onChange={e => handleChange(e)}
         />
       </label>
       <label>
@@ -73,16 +69,12 @@ function TaskForm() {
           placeholder="Description"
           name="description"
           value={task.description}
-          onChange={(e) => handleChange(e)}
+          onChange={e => handleChange(e)}
         />
       </label>
       <label>
         Priority
-        <select
-          name="priority"
-          value={task.priority}
-          onChange={(e) => handleChange(e)}
-        >
+        <select name="priority" value={task.priority} onChange={e => handleChange(e)}>
           <option value={Priority.highest}>Urgent and important</option>
           <option value={Priority.high}>Important but not urgent</option>
           <option value={Priority.medium}>Urgent but not important</option>
