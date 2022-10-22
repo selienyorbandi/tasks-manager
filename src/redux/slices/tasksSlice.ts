@@ -1,4 +1,4 @@
-import { ITask, Priority } from "./../../models/ITask";
+import { ITask } from "./../../models/ITask";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: ITask[] = [];

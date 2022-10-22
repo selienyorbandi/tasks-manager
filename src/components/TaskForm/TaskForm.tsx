@@ -5,7 +5,7 @@ import { addTask } from "../../redux/slices/tasksSlice";
 import { ITask, Priority } from "../../models/ITask";
 
 import styles from "./TaskForm.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TaskForm() {
   const dispatch = useDispatch();
