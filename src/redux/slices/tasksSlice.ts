@@ -17,8 +17,14 @@ const tasksSlice = createSlice({
       const selectedTask = state.find(task => task.id === action.payload.id);
       if (selectedTask) selectedTask.completed = !selectedTask.completed;
     },
+    selectTask: (state, action) => {
+      const nonSelectedTasks = state;
+      nonSelectedTasks.forEach(task => task.selected = false);
+      const selectedTask = state.find(task => task.id === action.payload.id);
+      if (selectedTask) selectedTask.selected = !selectedTask.selected;
+    }
   },
 });
 
-export const { addTask, deleteTask, completeTask } = tasksSlice.actions;
+export const { addTask, deleteTask, completeTask, selectTask } = tasksSlice.actions;
 export default tasksSlice.reducer;

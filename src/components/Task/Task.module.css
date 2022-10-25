@@ -13,14 +13,12 @@
   overflow: hidden;
 }
 
-.Task:hover {
-  cursor: pointer;
-}
 
-.Task h3 {
+.Task h4 {
   padding: 0;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-weight: 400;
 }
 
 .Task div {
@@ -33,13 +31,31 @@
   color: gray;
 }
 
+.Task__Content {
+  min-width: 100%;
+}
+
+.Task__Content:hover   {
+  cursor: pointer;
+}
+
 .Task__Controllers {
   display: none;
   gap: 0.5rem;
 }
+
+.Task__Selected h4 {
+  font-weight: 600;
+}
+
+.Task__Content:hover h4  {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 600px) {
   .Task__Content {
-    max-width: calc(100% - 80px);
+    min-width: calc(100% - 80px);
+    width: calc(100% - 80px);
   }
 }
 @media screen and (min-width: 800px) {

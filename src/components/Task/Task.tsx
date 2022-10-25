@@ -3,7 +3,7 @@ import Checkbox from "../Checkbox/Checkbox";
 import cross from "../../assets/cross.svg";
 import styles from "./Task.module.css";
 import { useDispatch } from "react-redux";
-import { completeTask, deleteTask } from "../../redux/slices/tasksSlice";
+import { completeTask, deleteTask, selectTask } from "../../redux/slices/tasksSlice";
 
 function Task({ task }: { task: ITask }) {
   const dispatch = useDispatch();
@@ -16,10 +16,14 @@ function Task({ task }: { task: ITask }) {
     dispatch(completeTask(task));
   };
 
+  const handleSelectedStatus = () => {
+    dispatch(selectTask(task));
+  };
+
   return (
-    <div className={styles.Task}>
-      <div className={`${task.completed ? styles.Task__Done : ""} ${styles.Task__Content}`}>
-        <h3>{task.title}</h3>
+    <div className={styles.Task} onClick={() => handleSelectedStatus()}>
+      <div className={`${task.completed ? styles.Task__Done : ""} ${styles.Task__Content} ${task.selected ? styles.Task__Selected : ""}`} >
+        <h4>{task.title}</h4>
         {task.selected ? <p> {task.description} </p> : <></>}
       </div>
       <div className={styles.Task__Controllers}>
