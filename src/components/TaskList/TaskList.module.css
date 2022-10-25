@@ -1,5 +1,15 @@
 .TaskList {
   padding: 1rem;
-  width: 100%;
-  max-width: 50vw;
+  max-height: 35vh;
+  overflow: hidden;
+}
+.TaskList__Expanded {
+  padding: 1rem;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 700px) {
+  .TaskList {
+    max-width: 50vw;
+  }
 }

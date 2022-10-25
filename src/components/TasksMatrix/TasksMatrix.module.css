@@ -13,41 +13,6 @@
   border: solid 0.5rem #06283d;
 }
 
-.TasksMatrix section header {
-  background: rgba(0, 0, 0, 0.543);
-  padding: 1rem;
-  color: #fff;
-}
-
-.TasksMatrix h2 {
-  font-weight: 600;
-}
-
-.TasksMatrix h3 {
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.Urgent {
-  background: var(--urgent-important-bg);
-  grid-area: urgent-important;
-}
-
-.High {
-  background: var(--not-urgent-important-bg);
-  grid-area: not-urgent-important;
-}
-
-.Medium {
-  background: var(--urgent-not-important-bg);
-  grid-area: urgent-not-important;
-}
-
-.Low {
-  background: var(--not-urgent-not-important-bg);
-  grid-area: not-urgent-not-important;
-}
-
 .TasksMatrix__AddBtn {
   background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
   background-color: #2dabf9;
@@ -69,11 +34,4 @@
 .TasksMatrix__AddBtn:hover {
   cursor: pointer;
   transform: scale(1.5);
-}
-
-@media screen and (min-width: 900px) {
-  .TasksMatrix {
-    height: calc(100vh - 4rem);
-    max-height: 100%;
-  }
 }

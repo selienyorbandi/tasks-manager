@@ -1,22 +1,26 @@
-import React, { FormEvent, useState } from "react";
+import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/slices/tasksSlice";
 
-import { ITask, Priority } from "../../models/ITask";
+import { ITask, TCuadrant } from "../../models/ITask";
 
 import styles from "./TaskForm.module.css";
-import { useNavigate } from "react-router-dom";
 
-function TaskForm() {
+function TaskForm({
+  fixedPriority,
+  setIsOpen,
+}: {
+  fixedPriority?: TCuadrant;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const initialTaskValue = {
     id: new Date().getMilliseconds(),
     title: "",
     description: "",
     completed: false,
     selected: false,
-    priority: Priority.highest,
+    priority: fixedPriority || "urgent",
     dateAdded: new Date().toString(),
   };
   const [task, setTask] = useState<ITask>(initialTaskValue);
@@ -43,13 +47,17 @@ function TaskForm() {
       });
       setTask(initialTaskValue);
       dispatch(addTask(task));
-      navigate("/");
+      setIsOpen(false);
     }
   };
 
   return (
     <form className={styles.TaskForm} onSubmit={e => handleSubmit(e)}>
-      <button className={styles.TaskForm__CloseBtn} aria-label="Close" onClick={() => navigate(-1)}>
+      <button
+        type="button"
+        className={styles.TaskForm__CloseBtn}
+        aria-label="Close"
+        onClick={() => setIsOpen(false)}>
         ×
       </button>
       <label>
@@ -72,16 +80,22 @@ function TaskForm() {
           onChange={e => handleChange(e)}
         />
       </label>
-      <label>
-        Priority
-        <select name="priority" value={task.priority} onChange={e => handleChange(e)}>
-          <option value={Priority.highest}>Urgent and important</option>
-          <option value={Priority.high}>Important but not urgent</option>
-          <option value={Priority.medium}>Urgent but not important</option>
-          <option value={Priority.low}>Not urgent and not important</option>
-        </select>
-      </label>
-      <button className={styles.TaskForm__Addbtn}>Add Task</button>
+      {!fixedPriority ? (
+        <label>
+          Priority
+          <select name="priority" value={task.priority} onChange={e => handleChange(e)}>
+            <option value={"urgent"}>Urgent and important</option>
+            <option value={"high"}>Important but not urgent</option>
+            <option value={"medium"}>Urgent but not important</option>
+            <option value={"low"}>Not urgent and not important</option>
+          </select>
+        </label>
+      ) : (
+        <></>
+      )}
+      <button type="submit" className={styles.TaskForm__Addbtn}>
+        Add Task
+      </button>
     </form>
   );
 }

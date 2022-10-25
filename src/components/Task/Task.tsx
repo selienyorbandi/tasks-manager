@@ -18,7 +18,7 @@ function Task({ task }: { task: ITask }) {
 
   return (
     <div className={styles.Task}>
-      <div className={task.completed ? styles.Task__Done : ""}>
+      <div className={`${task.completed ? styles.Task__Done : ""} ${styles.Task__Content}`}>
         <h3>{task.title}</h3>
         {task.selected ? <p> {task.description} </p> : <></>}
       </div>
@@ -31,7 +31,7 @@ function Task({ task }: { task: ITask }) {
           onClick={() => handleDelete()}
         />
         <span onClick={() => handleCompletedStatus()}>
-          <Checkbox />
+          <Checkbox isChecked={task.completed} />
         </span>
       </div>
     </div>

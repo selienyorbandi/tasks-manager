@@ -1,0 +1,89 @@
+a {
+  text-decoration: none;
+}
+
+.urgent {
+  background: var(--urgent-important-bg);
+  grid-area: urgent-important;
+}
+
+.high {
+  background: var(--not-urgent-important-bg);
+  grid-area: not-urgent-important;
+}
+
+.medium {
+  background: var(--urgent-not-important-bg);
+  grid-area: urgent-not-important;
+}
+
+.low {
+  background: var(--not-urgent-not-important-bg);
+  grid-area: not-urgent-not-important;
+}
+
+.Cuadrant {
+  max-height: 50vh;
+  overflow: hidden;
+}
+.Cuadrant__expanded {
+  max-width: 100vw;
+}
+.Cuadrant header {
+  background: rgba(0, 0, 0, 0.543);
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Cuadrant h2 {
+  font-weight: 600;
+}
+
+.Cuadrant h3 {
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.Cuadrant__Header__Content {
+  display: flex;
+  flex-direction: column;
+}
+
+.Cuadrant__Header__Controls {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.Cuadrant__Header__Controls div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  background: linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+  background-color: #2dabf9;
+  box-shadow: inset 0px -3px 7px 0px #29bbff;
+  color: #fff;
+}
+
+.Cuadrant__Header__Controls div:first-child {
+  background: #003869;
+  box-shadow: none;
+}
+
+.Cuadrant__Header__Controls div:hover {
+  filter: brightness(1.6);
+}
+
+@media screen and (min-width: 360px) {
+  .Cuadrant h3 {
+    font-size: 1rem;
+  }
+}

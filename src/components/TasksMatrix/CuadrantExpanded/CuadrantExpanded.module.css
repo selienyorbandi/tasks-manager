@@ -1,0 +1,41 @@
+.CuadrantExpanded {
+  position: relative;
+}
+
+.CuadrantExpanded section {
+  width: 100%;
+  min-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.CuadrantExpanded section header {
+  background: rgba(0, 0, 0, 0.543);
+  padding: 2rem 1rem;
+  color: #fff;
+}
+
+.CuadrantExpanded h2 {
+  font-weight: 600;
+}
+
+.CuadrantExpanded h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.TaskForm__CloseBtn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 2rem;
+}
+
+.TaskForm__CloseBtn:hover,
+.TaskForm__CloseBtn:active {
+  cursor: pointer;
+  color: rgb(141, 0, 0);
+}
