@@ -28,6 +28,8 @@ a {
 }
 .Cuadrant__expanded {
   max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .Cuadrant header {
   background: rgba(0, 0, 0, 0.543);
