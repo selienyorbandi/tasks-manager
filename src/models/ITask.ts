@@ -9,3 +9,10 @@ export interface ITask {
   selected: boolean;
   dateAdded: string;
 }
+
+export interface ITasksSlice {
+  urgent: ITask[];
+  high: ITask[];
+  medium: ITask[];
+  low: ITask[];
+}

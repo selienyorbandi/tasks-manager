@@ -1,12 +1,11 @@
-import { ITask } from "../../models/ITask";
+import { ITasksSlice } from "../../models/ITask";
 import TasksMatrixNonExpanded from "./TasksMatrixNonExpanded/TasksMatrixNonExpanded";
 import styles from "./TasksMatrix.module.css";
 import { useState } from "react";
 import TaskForm from "../TaskForm/TaskForm";
 
-function TasksMatrix({ tasks }: { tasks: ITask[] }) {
+function TasksMatrix({ tasks }: { tasks: ITasksSlice }) {
   const [isAddingTask, setIsAddingTask] = useState(false);
-
   return (
     <>
       <main className={styles.TasksMatrix}>

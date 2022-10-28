@@ -13,7 +13,6 @@
   overflow: hidden;
 }
 
-
 .Task h4 {
   padding: 0;
   text-overflow: ellipsis;
@@ -35,7 +34,7 @@
   min-width: 100%;
 }
 
-.Task__Content:hover   {
+.Task__Content:hover {
   cursor: pointer;
 }
 
@@ -48,8 +47,13 @@
   font-weight: 600;
 }
 
-.Task__Content:hover h4  {
+.Task__Content:hover h4 {
   text-decoration: underline;
+}
+
+.Task:active,
+.Task:focus {
+  background: #e7e7e7;
 }
 
 @media screen and (min-width: 600px) {

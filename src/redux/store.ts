@@ -13,7 +13,7 @@ import {
 } from "redux-persist";
 
 const persistConfig = {
-  key: "tasks-manager-redux",
+  key: "tasks-manager-v1",
   storage,
 };
 

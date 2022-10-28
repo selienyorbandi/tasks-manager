@@ -20,7 +20,6 @@ function Cuadrant({
     medium: { title: "Delegate", subtitle: "Urgent but not important", priority: "medium" },
     low: { title: "Drop it", subtitle: "Neither important nor urgent", priority: "low" },
   };
-
   return (
     <>
       <section
@@ -36,10 +35,7 @@ function Cuadrant({
             <div className={styles.Cuadrant__Header__Controls}>{children}</div>
           </header>
         </Link>
-        <TaskList
-          tasks={tasks.filter(task => task.priority === cuadrants[cuadrant].priority)}
-          expanded={isExpanded}
-        />
+        <TaskList tasks={tasks} expanded={isExpanded} />
       </section>
     </>
   );
